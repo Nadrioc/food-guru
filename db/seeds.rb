@@ -18,7 +18,8 @@ puts 'Creating 5 fake USERS...'
     first_name: Faker::Artist.name,
     last_name:  Faker::Name.last_name,
     email:      Faker::Internet.email,
-    password:   Faker::Internet.password
+    password:   Faker::Internet.password,
+    image:      'http://apod.nasa.gov/apod/image/1407/m31_bers_960.jpg'
   )
   user.save!
 end
@@ -35,7 +36,6 @@ puts 'Creating 5 fake LESSONS...'
     user:       User.all.sample,
     description:Faker::GameOfThrones.quote,
     capacity:   2
-    image:      "https://tinyurl.com/y7rspl43"
   )
   lesson.save!
 end
