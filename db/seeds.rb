@@ -35,6 +35,7 @@ puts 'Creating 5 fake LESSONS...'
     user:       User.all.sample,
     description:Faker::GameOfThrones.quote,
     capacity:   2
+    image:      "https://tinyurl.com/y7rspl43"
   )
   lesson.save!
 end
