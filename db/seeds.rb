@@ -9,8 +9,8 @@ puts 'Cleaning database...'
 User.destroy_all
 Lesson.destroy_all
 
-puts 'Creating 5 fake USERS...'
-5.times do
+puts 'Creating 12 fake USERS...'
+12.times do
   user = User.new(
     first_name: Faker::Artist.name,
     last_name:  Faker::Name.last_name,
@@ -36,8 +36,8 @@ images = [
   'https://images.pexels.com/photos/8572/food-chicken-meat-outdoors.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 ]
 
-puts 'Creating 5 fake LESSONS...'
-5.times do
+puts 'Creating 12 fake LESSONS...'
+12.times do
   lesson = Lesson.new(
     cuisine:    Faker::Address.country,
     location:   Faker::Address.city,
