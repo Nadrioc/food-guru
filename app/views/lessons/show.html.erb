@@ -8,7 +8,8 @@
               <h2>
                 <%= @lesson.title %>
               </h2>
-              <h4>Information about the lesson</h4>
+              <p>Information about the lesson</p>
+              <p class="text-left">Hosted By: <%= link_to @lesson.user.email, user_path(@lesson.user) %></p>
               <p>Cuisine: <%= @lesson.cuisine %></p>
               <p>Location: <%= @lesson.location %></p>
               <p>Max p.: <%= @lesson.capacity %></p>
@@ -17,6 +18,7 @@
           <div class="text-center col-md-4">
             <div class="page-header align-top">
               <img class="show-image-page" src="<%= @lesson.image %>" alt="Cooking lesson">
+
             </div>
           </div>
         </div>
@@ -40,10 +42,4 @@
     <%= link_to "Go Back", lessons_path %>
   </div>
 </div>
-
-
-
-
-
-
 
