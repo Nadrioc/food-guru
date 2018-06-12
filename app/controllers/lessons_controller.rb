@@ -23,6 +23,22 @@ class LessonsController < ApplicationController
     end
   end
 
+  def edit
+    @lesson = Lesson.find(params[:id])
+  end
+
+  def update
+    @lesson = Lesson.find(params[:id])
+    @lesson.update(lesson_params)
+    redirect_to @lesson
+  end
+
+   def destroy
+    @lesson = Lesson.find(params[:id])
+    @lesson.destroy
+    redirect_to lessons_path
+  end
+
   private
 
   def lesson_params
