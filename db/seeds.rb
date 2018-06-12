@@ -44,7 +44,7 @@ puts 'Creating 12 fake LESSONS...'
     title:      Faker::Book.title,
     user:       User.all.sample,
     description:Faker::GameOfThrones.quote,
-    capacity:   [1..10].sample,
+    capacity:   (1..10).sample,
     image:      images.sample
   )
   lesson.save!
