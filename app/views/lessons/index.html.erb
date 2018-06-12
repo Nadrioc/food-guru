@@ -1,27 +1,7 @@
 <h1>List of Lessons</h1>
 
 
-<div class="container">
-  <div class="row">
-    <% @lessons.each do |lesson| %>
-      <div class="col-xs-12 col-sm-4">
-        <%= link_to lesson_path(lesson) do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');">
-            <div class="card-title">
-              <h2><%= lesson.title %></h2>
-            </div>
-            <div class="card-description">
-              <h2><%= lesson.description %></h2>
-            </div>
-            <img class="card-user" src="https://avatars3.githubusercontent.com/u/10833329?s=460&v=4">
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-
+<%= render 'shared/card' %>
 
 
 
