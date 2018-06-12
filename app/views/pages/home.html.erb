@@ -3,10 +3,20 @@
 
 <!-- Benefits section -->
 
-
 <!-- About section -->
 <div class="ups-container--home">
   <h2 class="hp__section-heading">
       <span>About</span>
   </h2>
 </div>
+
+<!-- Top 10 lessons -->
+
+  <ul><% @lessons.each do |lesson| %>
+    <li><%= lesson.title %></li>
+    <li><%= lesson.image %></li>
+  <% end %>
+</ul>
+
+
+
