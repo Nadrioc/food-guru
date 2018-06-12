@@ -29,10 +29,12 @@ p
 puts 'Creating 5 fake LESSONS...'
 5.times do
   lesson = Lesson.new(
-    cuisine:  Faker::Address.country,
-    location: Faker::Address.city,
-    title:    Faker::ChuckNorris.fact,
-    user:  User.all.sample
+    cuisine:    Faker::Address.country,
+    location:   Faker::Address.city,
+    title:      Faker::Book.title,
+    user:       User.all.sample,
+    description:Faker::GameOfThrones.quote,
+    capacity:   2
   )
   lesson.save!
 end
