@@ -2,8 +2,13 @@
   <div class="banner-content">
     <h1>FOODGURU</h1>
     <p>Master any cuisine with the help of locals</p>
-    <a class="btn btn-primary btn-guru">Find</a>
-    <a class="btn btn-primary btn-guru">Host</a>
+
+    <%= link_to lessons_path do  %>
+      <div class="btn btn-primary btn-guru">Learn to cook</div>
+    <% end %>
+    <%= link_to new_lesson_path do  %>
+    <div class="btn btn-primary btn-guru">Host an event</div>
+    <% end %>
   </div>
 </div>
 
