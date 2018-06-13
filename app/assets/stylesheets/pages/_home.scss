@@ -1,4 +1,4 @@
-.ups-container--home {
+.headings-home {
     position: relative;
     width: 100%;
     margin-left: auto;
@@ -7,15 +7,14 @@
     padding: 0 2%;
 }
 
-h2.hp__section-heading {
-    font-size: 38px;
-    font-family: 'clarendon-regular';
+h2.section-heading {
+    color:#868686;
 }
 
-.hp__section-heading:before {
+.section-heading:before {
     content: '';
     display: block;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #868686;
     position: absolute;
     top: 50%;
     right: 0;
@@ -26,9 +25,22 @@ h2.hp__section-heading {
     box-sizing: border-box;
 }
 
-.hp__section-heading span {
+.section-heading span {
     background: #f4f4f4;
     position: relative;
     padding-right: 10px;
     padding-left: 10px;
+    color: #807d7d;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+.home {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.home-card {
+  height: 60vh;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
 }
