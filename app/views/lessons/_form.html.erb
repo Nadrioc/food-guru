@@ -1,11 +1,17 @@
-<%= simple_form_for(@lesson) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :location %>
-  <%= f.input :cuisine, collection: [ "French", "Mexican", "Chinese"] %>
-  <%= f.input :capacity %>
-  <%= f.input :image %>
-  <%= f.input :image_cache, as: :hidden %>
-  <%= f.input :description, as: :text  %>
-  <%= f.submit %>
-<% end %>
-
+<div class="container ">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= simple_form_for(@lesson) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :location %>
+      <%= f.input :cuisine, collection: [ "French", "Mexican", "Chinese"] %>
+      <%= f.input :capacity %>
+      <%= f.input :image %>
+      <%= f.input :image_cache, as: :hidden %>      
+      <%= f.input :description, as: :text  %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>
