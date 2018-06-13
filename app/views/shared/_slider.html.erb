@@ -10,10 +10,32 @@
   <div class="carousel-inner">
 
     <div class="item active">
+        <%= link_to lesson_path(lessons.first) do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path lessons.first.image, height: 300, width: 400, crop: :fill %>')">
+            <div class="card-title">
+              <h2><%= lessons.first.title %></h2>
+            </div>
+            <div class="card-description">
+              <h2><%= lessons.first.description %></h2>
+            </div>
+            <img class="card-user" src="https://avatars3.githubusercontent.com/u/10833329?s=460&v=4">
+          </div>
+        <% end %>
     </div>
     <% lessons.each do |lesson| %>
     <div class="item">
-    <%= render "shared/card" %>
+        <%= link_to lesson_path(lesson) do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path lesson.image, height: 300, width: 400, crop: :fill %>')">
+            <div class="card-title">
+              <h2><%= lesson.title %></h2>
+            </div>
+            <div class="card-description">
+              <h2><%= lesson.description %></h2>
+            </div>
+          </div>
+        <% end %>
     </div>
     <% end %>
 

@@ -6,11 +6,11 @@
 <!-- About section -->
 <div class="headings-home">
   <h2 class="section-heading">
-      <span>About</span>
+      <span>Latest cooking news</span>
   </h2>
 </div>
 
-<!-- Latest 4 lessons -->
+<!-- Latest 3 lessons -->
 <div class="container home">
   <div class="row">
     <% @lessons.each do |lesson| %>
@@ -23,7 +23,6 @@
             <div class="card-description">
               <h2><%= lesson.description %></h2>
             </div>
-            <img class="card-user" src="https://avatars3.githubusercontent.com/u/10833329?s=460&v=4">
           </div>
         <% end %>
       </div>
