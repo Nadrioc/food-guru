@@ -6,8 +6,8 @@
 require 'faker'
 
 puts 'Cleaning database...'
-User.destroy_all
 Lesson.destroy_all
+User.destroy_all
 
 puts 'Creating 2 fake USERS...'
 2.times do
@@ -44,7 +44,7 @@ puts 'Creating 5. fake LESSONS...'
     title:      Faker::Book.title,
     user:       User.all.sample,
     description:Faker::GameOfThrones.quote,
-    capacity:   [1,2,3,4,5,12,8,16,9].sample,
+    capacity:   [1,2,3,4,5,12,8,16,9].sample
   )
   lesson.remote_image_url = images.sample
   lesson.save!
