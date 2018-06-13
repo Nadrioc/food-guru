@@ -1,11 +1,12 @@
 
 .card {
-  height: 200px;
+  height: 275px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
+  margin-bottom: 20px;
 }
 .card-user {
   position: absolute;
@@ -34,9 +35,11 @@
   font-size: 22px;
 }
 .card-description p {
-  font-size: 14px;
-  opacity: 0.7;
+  font-size: 16px;
+  opacity: 1.9;
   font-weight: lighter;
+  color: #ffffff;
+  overflow: hidden;
 }
 .card-link {
   position: absolute;
@@ -50,5 +53,9 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.row {
+  margin-bottom: 20px;
 }
 
