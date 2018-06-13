@@ -6,12 +6,12 @@
       <%= f.input :location %>
       <%= f.input :cuisine, collection: [ "French", "Mexican", "Chinese"] %>
       <%= f.input :capacity %>
-      <%= f.input :image, label: 'Image Url' %>
+      <%= f.input :image %>
+      <%= f.input :image_cache, as: :hidden %>      
       <%= f.input :description, as: :text  %>
       <%= f.submit %>
       <% end %>
     </div>
-
   </div>
 </div>
 <br>

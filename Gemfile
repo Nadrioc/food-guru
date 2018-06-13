@@ -18,6 +18,9 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+
 
 #Geocoding gems
 gem "geocoder"

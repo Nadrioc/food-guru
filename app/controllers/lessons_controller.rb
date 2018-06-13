@@ -28,7 +28,6 @@ class LessonsController < ApplicationController
       redirect_to lessons_path
     else
       render :new
-    end
   end
 
   def edit
@@ -45,6 +44,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:cuisine, :location, :title, :description, :image, :capacity)
+    params.require(:lesson).permit(:cuisine, :location, :title, :description, :image, :body, :capacity)
   end
 end
