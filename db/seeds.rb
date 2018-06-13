@@ -36,7 +36,7 @@ images = [
   'https://images.pexels.com/photos/8572/food-chicken-meat-outdoors.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 ]
 
-puts 'Creating 1 fake LESSONS...'
+puts 'Creating 1. fake LESSONS...'
 1.times do
   lesson = Lesson.new(
     cuisine:    Faker::Address.country,
