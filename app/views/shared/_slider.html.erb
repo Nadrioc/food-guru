@@ -1,0 +1,52 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+
+    <div class="item active">
+        <%= link_to lesson_path(lessons.first) do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path lessons.first.image, height: 300, width: 400, crop: :fill %>')">
+            <div class="card-title">
+              <h2><%= lessons.first.title %></h2>
+            </div>
+            <div class="card-description">
+              <h2><%= lessons.first.description %></h2>
+            </div>
+            <img class="card-user" src="https://avatars3.githubusercontent.com/u/10833329?s=460&v=4">
+          </div>
+        <% end %>
+    </div>
+    <% lessons.each do |lesson| %>
+    <div class="item">
+        <%= link_to lesson_path(lesson) do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path lesson.image, height: 300, width: 400, crop: :fill %>')">
+            <div class="card-title">
+              <h2><%= lesson.title %></h2>
+            </div>
+            <div class="card-description">
+              <h2><%= lesson.description %></h2>
+            </div>
+          </div>
+        <% end %>
+    </div>
+    <% end %>
+
+  </div>
+
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
