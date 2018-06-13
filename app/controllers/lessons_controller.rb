@@ -31,6 +31,17 @@ class LessonsController < ApplicationController
     end
   end
 
+  def edit
+    @lesson = Lesson.find(params[:id])
+  end
+
+  def update
+    @lesson = Lesson.find(params[:id])
+    @lesson.update(lesson_params)
+    redirect_to lesson_path(@lesson)
+    # Will raise ActiveModel::ForbiddenAttributesError
+  end
+
   private
 
   def lesson_params
