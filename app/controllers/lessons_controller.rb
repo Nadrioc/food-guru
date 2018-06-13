@@ -1,7 +1,15 @@
 class LessonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @lessons = Lesson.all
+    @lessons = Lesson.where.not(latitude: nil, longitude: nil)
+
+    @markers = @lessons.map do |lesson|
+      {
+        lat: lesson.latitude,
+        lng: lesson.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/lessons/map_box", locals: { lesson: lesson }) }
+      }
+    end
   end
 
   def show
@@ -21,22 +29,6 @@ class LessonsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
-    @lesson = Lesson.find(params[:id])
-  end
-
-  def update
-    @lesson = Lesson.find(params[:id])
-    @lesson.update(lesson_params)
-    redirect_to @lesson
-  end
-
-   def destroy
-    @lesson = Lesson.find(params[:id])
-    @lesson.destroy
-    redirect_to lessons_path
   end
 
   private
