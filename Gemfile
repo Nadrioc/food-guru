@@ -20,6 +20,9 @@ gem 'devise'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'cloudinary'
 
+#Geocoding gems
+gem "geocoder"
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
