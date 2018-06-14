@@ -23,6 +23,11 @@
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
               <% end %>
             </li>
+              <li>
+              <%= link_to dashboard_path do %>
+                <i class="fa fa-user"></i> <%= t(".dashboard", default: "Dashboard") %>
+              <% end %>
+            </li>
             <li>
               <%= link_to "#" do %>
                 <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
@@ -51,13 +56,16 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <% if user_signed_in? %>
         <li>
+          <%= link_to t(".show", default: "Profile"), user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
+        </li>
+        <li>
+          <%= link_to t(".show", default: "Dashboard"), dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        </li>
+        <li>
           <%= link_to t(".lessons", default: "Lessons"), lessons_path, class: "navbar-wagon-item navbar-wagon-link" %>
         </li>
         <li>
           <%= link_to t(".new", default: "Add a Lesson"), new_lesson_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        </li>
-        <li>
-          <%= link_to t(".show", default: "Profile"), user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
         </li>
         <% else %>
         <li>
