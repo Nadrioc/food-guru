@@ -1,1 +1,16 @@
+.item-styling {
+  height:100%;
+}
+.carousel-link {
+  width: 100%;
+}
+.item-styling .card {
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.item-styling .card .card-title {
+  text-align: center;
+}
