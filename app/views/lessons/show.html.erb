@@ -1,50 +1,55 @@
-<div class="wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="page-header align-top">
-              <h2>
-                <%= @lesson.title %> <%= link_to "Edit", edit_lesson_path, :class => "btn btn-primary" %>
-              </h2>
-              <p>Information about the lesson:</p>
-              <p class="text-left">Hosted By: <%= link_to @lesson.user.first_name, user_path(@lesson.user) %> <%= link_to @lesson.user.last_name, user_path(@lesson.user) %></p>
-              <p>Cuisine: <%= @lesson.cuisine %></p>
-              <p>Location: <%= @lesson.location %></p>
-              <p>People: <%= @lesson.capacity %></p>
-              <p>Price p/h: €<%= @lesson.price %> </p>
-            </div>
-          </div>
-          <div class="text-center col-md-4">
-            <div class="page-header align-top">
-              <img class="show-image-page" src="<%= @lesson.image %>" alt="Cooking lesson">
-
-            </div>
-          </div>
+      <div class="col-md-offset-1 col-md-6">
+        <div class="page-header align-top">
+          <h2>
+            <%= @lesson.title %> <%= link_to "Edit", edit_lesson_path, :class => "btn btn-primary" %>
+          </h2>
+          <p>Information about the lesson:</p>
+          <p class="text-left">Hosted By: <%= link_to @lesson.user.first_name, user_path(@lesson.user) %> <%= link_to @lesson.user.last_name, user_path(@lesson.user) %></p>
+          <p>Cuisine: <%= @lesson.cuisine %></p>
+          <p>Location: <%= @lesson.location %></p>
+          <p>People: <%= @lesson.capacity %></p>
+          <p>Price p/h: €<%= @lesson.price %> </p>
+        </div>
+      </div>
+      <div class="text-center col-md-4">
+        <div class="page-header align-top">
+          <img class="show-image-page" src="<%= @lesson.image %>" alt="Cooking lesson">
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="wrapper">
-  <div class="container">
-    <div class="container">
-      <div class="row">
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <div>
         <h4>About your host</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, commodi adipisci cupiditate atque. Autem rem adipisci nesciunt hic assumenda saepe illo libero voluptate accusamus repellat, iure nostrum quos velit reiciendis.</p>
-      </div>
-      <div class="row">
         <h4>What you will be cooking</h4>
         <p><%= @lesson.description %></p>
+         <%#= link_to "Go Back", lessons_path, :class => "btn btn-primary" %>
       </div>
     </div>
-    <%= link_to "Go Back", lessons_path, :class => "btn btn-primary" %>
     <br>
     <br>
   </div>
 </div>
 
+<div class="container ">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
 
+      <div
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      >
+    </div>
 
+  </div>
+</div>
+</div>
