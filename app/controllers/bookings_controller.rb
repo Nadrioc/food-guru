@@ -15,19 +15,24 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update
+    @booking.update(permitted_params)
+    redirect_to user_path(current_user)
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to root_path
+    redirect_to user_path
   end
 
   private
 
   def set_lesson
     @lesson = Lesson.find(params[:lesson_id])
+  end
+
+  def permitted_params
+    params.require(:booking).permit(:status)
   end
 
 end
