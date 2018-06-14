@@ -36,11 +36,45 @@ h2.section-heading {
 }
 
 .home {
-  width: 100%;
   margin-bottom: 20px;
 }
 
 .home-card {
   height: 60vh;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+}
+.benefits-card {
+  height: 60vh;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.benefits .row {
+  margin-bottom: 0px;
+}
+
+.benefits .bf {
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -30px;
+}
+
+.benefits .bf .card-title h2 {
+  text-align: center;
+  color: #FFB30F;
+  margin: 0px;
+  text-shadow: 0 0.2px 3px rgba(255, 179, 15, 0.2);
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+.benefits .bf .card-description p {
+  text-align: center;
+  color: #545454;
+  text-shadow: 0 1px 3px rgb(255, 255, 255);
+}
+
+.benefits .bf .card-description a p {
+  color: #FFB30F;
 }
