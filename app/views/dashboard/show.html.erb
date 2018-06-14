@@ -6,8 +6,9 @@
           <div class="col-md-8">
             <div class="page-header align-top">
               <h2>
-                <%= @user.first_name %> <%= @user.last_name %>'s Profile Page
+                My Dashboard
               </h2>
+              <p>Your info<%= link_to "(edit)", edit_user_registration_path %></p>
               <p class="text-left">Email: <%= @user.email %></p>
             </div>
           </div>
@@ -32,21 +33,21 @@
       </div>
     </div>
 
-    <h3><%= @user.first_name %>'s Lessons</h3>
+    <h3>My Lessons</h3>
 
     <div class="container">
       <div class="row">
-        <%= render 'shared/card-profile-lessons' %>
+        <%= render 'shared/card-mylessons' %>
       </div>
     </div>
 
 
 
-    <h3>Lessons <%= @user.first_name %> signed up for</h3>
+    <h3>Lessons I signed up for</h3>
 
     <div class="container">
       <div class="row">
-        <%= render 'shared/card-profile-bookings' %>
+        <%= render 'shared/card-booking' %>
       </div>
     </div>
 
