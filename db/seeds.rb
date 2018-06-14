@@ -6,8 +6,10 @@
 require 'faker'
 
 puts 'Cleaning database...'
+Booking.destroy_all
 Lesson.destroy_all
 User.destroy_all
+
 
 puts 'Creating 3 fake USERS...'
 3.times do
@@ -35,7 +37,6 @@ images = [
   'https://images.pexels.com/photos/66639/pexels-photo-66639.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   'https://images.pexels.com/photos/8572/food-chicken-meat-outdoors.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 ]
-
 
 cuisines = ["French", "Mexican", "Chinese", "Japanese", "German", "American", "Italian", "Indonesian", "Peruvian", "Argentinien", "Spanish" ]
 

@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <% @listed_lessons.each do |lesson| %>
+      <div class="col-xs-12 col-sm-4">
+        <%= link_to lesson_path(lesson) do %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path lesson.image, height: 300, width: 400, crop: :fill %>')">
+            <div class="card-title">
+              <h2><%= lesson.title %></h2>
+            </div>
+            <% lesson.bookings.each do |booking| %>
+              <div class="card-status">
+              <p><%= booking.status  %></p>
+            </div>
+            <% end %>
+            <div class="card-description">
+              <p><%= lesson.description %></p>
+            </div>
+            <img class="card-user" src="https://avatars3.githubusercontent.com/u/10833329?s=460&v=4">
+            <div>
+              <%= link_to lesson_path(lesson), method: :delete, data: { confirm: "Are you sure?" }, class:"card-booking-delete" do %>
+                DELETE
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+        <div>
+          <% lesson.bookings.each do |booking| %>
+        <% if booking.status == "Pending" %>
+            <%= form_for booking, :method => :put do |f| %>
+            <%= f.hidden_field :status, :value => "accepted" %>
+            <%= f.submit "Approve" %>
+          <% end %>
+          <%= form_for booking, :method => :put do |f| %>
+            <%= f.hidden_field :status, :value => "declined" %>
+            <%= f.submit "Decline" %>
+          <% end %>
+        <% end %>
+        <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
