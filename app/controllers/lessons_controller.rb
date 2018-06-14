@@ -31,6 +31,7 @@ class LessonsController < ApplicationController
       {
         lat: @lesson.latitude,
         lng: @lesson.longitude
+        # infoWindow: { content: render_to_string(partial: "/map_box_show", locals: { lesson: lesson }) }
       }
     ]
   end

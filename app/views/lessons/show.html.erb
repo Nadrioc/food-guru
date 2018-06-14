@@ -6,11 +6,16 @@
             <%= @lesson.title %> <%= link_to "Edit", edit_lesson_path, :class => "btn btn-primary" %>
           </h2>
           <p>Information about the lesson:</p>
-          <p class="text-left">Hosted By: <%= link_to @lesson.user.first_name, user_path(@lesson.user) %> <%= link_to @lesson.user.last_name, user_path(@lesson.user) %></p>
-          <p>Cuisine: <%= @lesson.cuisine %></p>
-          <p>Location: <%= @lesson.location %></p>
-          <p>People: <%= @lesson.capacity %></p>
-          <p>Price p/h: €<%= @lesson.price %> </p>
+          <p class="text-left">Hosted By:
+            <%= link_to @lesson.user.first_name, user_path(@lesson.user) %>
+            <%= link_to @lesson.user.last_name, user_path(@lesson.user) %>
+
+          <img src="<% link_to @lesson.image, user_path(@lesson.user) %>" alt="Host profile picture" class="img-rounded">
+          </p>
+          <p><i class="fas fa-utensils"></i>  <%= @lesson.cuisine %></p>
+          <p><i class="fas fa-map-marker"></i>  <%= @lesson.location %></p>
+          <p><i class="fas fa-user"></i>  <%= @lesson.capacity %></p>
+          <p><i class="fas fa-euro-sign"></i>  <%= @lesson.price %> </p>
         </div>
       </div>
       <div class="text-center col-md-4">
