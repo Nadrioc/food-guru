@@ -40,9 +40,11 @@
         <p><%= @lesson.description %></p>
       </div>
     </div>
+    <%= link_to "Book!", new_lesson_booking_path(@lesson) %>
     <%= link_to "Go Back", lessons_path, :class => "btn btn-primary" %>
     <br>
     <br>
+
   </div>
 </div>
 
