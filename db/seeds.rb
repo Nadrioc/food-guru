@@ -36,10 +36,14 @@ images = [
   'https://images.pexels.com/photos/8572/food-chicken-meat-outdoors.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 ]
 
+
+cuisines = ["French", "Mexican", "Chinese", "Japanese", "German", "American", "Italian", "Indonesian", "Peruvian", "Argentinien", "Spanish" ]
+
+
 puts 'Creating 3. fake LESSONS...'
 3.times do
   lesson = Lesson.new(
-    cuisine:    Faker::Address.country,
+    cuisine:    cuisines.sample,
     location:   Faker::Address.city,
     title:      Faker::Book.title,
     user:       User.all.sample,
