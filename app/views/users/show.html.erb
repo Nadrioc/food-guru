@@ -33,12 +33,37 @@
       </div>
     </div>
 
+    <h3>My Lessons</h3>
     <ul>
-      <% @lessons.each do |lesson| %>
-        <% raise %>
+      <% @listed_lessons.each do |lesson| %>
+      <li><%= lesson.title %></li>
+      <li><% lesson.bookings.each do |booking| %>
+        <%= booking.status %>
+          <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+          DELETE
+          <% end %>
+          <%= form_for booking, :method => :put do |f| %>
+            <%= f.hidden_field :status, :value => "accepted" %>
+            <%= f.submit "Approve" %>
+          <% end %>
+        <% end %>
+      </li>
       <% end %>
     </ul>
-    <%= link_to "Go Back", lessons_path %>
 
+    <h3>Lessons I signed up for</h3>
+    <ul>
+      <% @bookings.each do |booking| %>
+      <li><%= booking.lesson.title %></li>
+      <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
+      DELETE
+      <% end %>
+
+
+
+      <% end %>
+    </ul>
+
+    <%= link_to "Go Back", lessons_path %>
   </div>
 </div>
