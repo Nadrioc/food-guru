@@ -6,13 +6,13 @@
           <div class="col-md-8">
             <div class="page-header align-top">
               <h2>
-                <%= @lesson.title %>
+                <%= @lesson.title %> <%= link_to "Edit", edit_lesson_path, :class => "btn btn-primary" %>
               </h2>
-              <p>Information about the lesson <%= link_to "(edit)", edit_lesson_path %></p>
-              <p class="text-left">Hosted By: <%= link_to @lesson.user.email, user_path(@lesson.user) %></p>
+              <p>Information about the lesson:</p>
+              <p class="text-left">Hosted By: <%= link_to @lesson.user.first_name, user_path(@lesson.user) %> <%= link_to @lesson.user.last_name, user_path(@lesson.user) %></p>
               <p>Cuisine: <%= @lesson.cuisine %></p>
               <p>Location: <%= @lesson.location %></p>
-              <p>Max p.: <%= @lesson.capacity %></p>
+              <p>People: <%= @lesson.capacity %></p>
             </div>
           </div>
           <div class="text-center col-md-4">
@@ -39,8 +39,9 @@
         <p><%= @lesson.description %></p>
       </div>
     </div>
-    <%= link_to "Go Back", lessons_path %>
-
+    <%= link_to "Go Back", lessons_path, :class => "btn btn-primary" %>
+    <br>
+    <br>
   </div>
 </div>
 
