@@ -4,10 +4,10 @@
       <%= simple_form_for(@lesson) do |f| %>
       <%= f.input :title %>
       <%= f.input :location %>
-      <%= f.input :cuisine, collection: [ "French", "Mexican", "Chinese"] %>
+      <%= f.input :cuisine, collection: [ "French", "Mexican", "Chinese", "Japanese", "German", "American", "Italian", "Indonesian", "Peruvian", "Argentinien", "Spanish" ] %>
       <%= f.input :capacity %>
       <%= f.input :image %>
-      <%= f.input :image_cache, as: :hidden %>      
+      <%= f.input :image_cache, as: :hidden %>
       <%= f.input :description, as: :text  %>
       <%= f.submit %>
       <% end %>
