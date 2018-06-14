@@ -1,0 +1,8 @@
+<div class="card" style="width:200px">
+  <img class="card-img-top" src="<%= cl_image_path lesson.image, height: 150, width: 200, crop: :fill %>" alt="Card image">
+  <div class="card-body">
+    <h4 class="card-title" style="color: black"><%= lesson.title %></h4>
+    <p class="card-text" style="color: black">Price p/h: €<%= lesson.price %></p>
+    <p class="card-text" style="color: black"><%= lesson.location %></p>
+  </div>
+</div>

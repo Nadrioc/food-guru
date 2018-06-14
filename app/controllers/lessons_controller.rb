@@ -17,14 +17,23 @@ class LessonsController < ApplicationController
     @markers = @lessons.where.not(latitude: nil, longitude: nil).map do |lesson|
       {
         lat: lesson.latitude,
-        lng: lesson.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/lessons/map_box", locals: { lesson: lesson }) }
+        lng: lesson.longitude,
+        infoWindow: { content: render_to_string(partial: "/lessons/map_box", locals: { lesson: lesson }) }
       }
     end
   end
 
   def show
     @lesson = Lesson.find(params[:id])
+
+
+    @markers = [
+      {
+        lat: @lesson.latitude,
+        lng: @lesson.longitude
+        # infoWindow: { content: render_to_string(partial: "/map_box_show", locals: { lesson: lesson }) }
+      }
+    ]
   end
 
   def new
