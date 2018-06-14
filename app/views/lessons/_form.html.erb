@@ -5,10 +5,12 @@
       <%= f.input :title %>
       <%= f.input :location %>
       <%= f.input :cuisine, collection: [ "French", "Mexican", "Chinese", "Japanese", "German", "American", "Italian", "Indonesian", "Peruvian", "Argentinien", "Spanish" ] %>
+      <%= f.input :price %>
       <%= f.input :capacity %>
+      <%= f.input :description, as: :text  %>
       <%= f.input :image %>
       <%= f.input :image_cache, as: :hidden %>
-      <%= f.input :description, as: :text  %>
+      <br>
       <%= f.submit %>
       <% end %>
     </div>
