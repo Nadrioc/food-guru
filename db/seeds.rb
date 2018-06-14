@@ -39,7 +39,6 @@ images = [
 
 cuisines = ["French", "Mexican", "Chinese", "Japanese", "German", "American", "Italian", "Indonesian", "Peruvian", "Argentinien", "Spanish" ]
 
-
 puts 'Creating 3. fake LESSONS...'
 3.times do
 
