@@ -1,6 +1,6 @@
 <div class="container home">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-12">
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -11,20 +11,20 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-        <% lessons.each do |lesson| %>
+        <%# lessons.each do |lesson| %>
           <div class="item active">
             <div class="item-styling">
-              <%= link_to lesson_path(lessons.first), class: 'carousel-link' do %>
+              <%= link_to lesson_path(@first_lesson), class: 'carousel-link' do %>
                 <div class="card slider" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-               url('<%= cl_image_path lessons.first.image, height: 300, width: 400, crop: :fill %>')">
+               url('<%= cl_image_path @first_lesson.image, height: 300, width: 400, crop: :fill %>')">
                   <div class="card-title">
-                    <h2><%= lessons.first.title %></h2>
+                    <h2><%= @first_lesson.title %></h2>
                   </div>
                 </div>
               <% end %>
             </div>
           </div>
-
+          <% lessons.each do |lesson| %>
             <div class="item">
               <div class="item-styling">
                 <%= link_to lesson_path(lesson), class: 'carousel-link' do %>
