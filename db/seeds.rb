@@ -36,7 +36,6 @@ images = [
   'https://images.pexels.com/photos/8572/food-chicken-meat-outdoors.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 ]
 
-
 cuisines = ["French", "Mexican", "Chinese", "Japanese", "German", "American", "Italian", "Indonesian", "Peruvian", "Argentinien", "Spanish" ]
 
 
@@ -48,7 +47,8 @@ puts 'Creating 3. fake LESSONS...'
     title:      Faker::Book.title,
     user:       User.all.sample,
     description:Faker::GameOfThrones.quote,
-    capacity:   [1,2,3,4,5,12,8,16,9].sample
+    capacity:   [1,2,3,4,5,12,8,16,9].sample,
+    price:      [10,12,13,14,15,12,18,16,19].sample
   )
   lesson.remote_image_url = images.sample
   lesson.save!
