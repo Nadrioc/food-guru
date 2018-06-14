@@ -9,13 +9,14 @@ puts 'Cleaning database...'
 Lesson.destroy_all
 User.destroy_all
 
-puts 'Creating 1 fake USERS...'
-1.times do
+puts 'Creating 3 fake USERS...'
+3.times do
   user = User.new(
     first_name: Faker::Artist.name,
     last_name:  Faker::Name.last_name,
     email:      Faker::Internet.email,
-    password:   Faker::Internet.password
+    password:   Faker::Internet.password,
+    image:      'https://mickgrom.github.io/profile/images/profilepicmick.jpg'
   )
   user.save!
 end
@@ -24,7 +25,6 @@ puts 'Finished Users!'
 p
 
 images = [
-  'http://apod.nasa.gov/apod/image/1407/m31_bers_960.jpg',
   'https://images.pexels.com/photos/375889/pexels-photo-375889.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   'https://images.pexels.com/photos/298926/woman-kitchen-man-everyday-life-298926.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
   'https://images.pexels.com/photos/6245/kitchen-cooking-interior-decor.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -36,8 +36,8 @@ images = [
   'https://images.pexels.com/photos/8572/food-chicken-meat-outdoors.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 ]
 
-puts 'Creating 1. fake LESSONS...'
-1.times do
+puts 'Creating 3. fake LESSONS...'
+3.times do
   lesson = Lesson.new(
     cuisine:    Faker::Address.country,
     location:   Faker::Address.city,
