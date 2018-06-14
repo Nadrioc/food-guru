@@ -1,13 +1,20 @@
 <!-- Banner import -->
 <%= render 'shared/banner' %>
 
-<!-- Slider section -->
-<%= render 'shared/slider', lessons: @selected_lessons %>
+
+<div class="container home">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <!-- Slider section -->
+      <%= render 'shared/slider', lessons: @selected_lessons %>
+    </div>
+  </div>
+</div>
 
 <!-- About section -->
 <div class="headings-home">
   <h2 class="section-heading">
-      <span>Latest cooking news</span>
+    <span>Latest cooking news</span>
   </h2>
 </div>
 
@@ -15,18 +22,18 @@
 <div class="container home">
   <div class="row">
     <% @lessons.each do |lesson| %>
-      <div class="col-xs-12 col-sm-4">
-        <%= link_to lesson_path(lesson) do %>
-          <div class="card home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');">
-            <div class="card-title">
-              <h2><%= lesson.title %></h2>
-            </div>
-            <div class="card-description">
-              <h2><%= lesson.description %></h2>
-            </div>
-          </div>
-        <% end %>
+    <div class="col-xs-12 col-sm-4">
+      <%= link_to lesson_path(lesson) do %>
+      <div class="card home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');">
+        <div class="card-title">
+          <h2><%= lesson.title %></h2>
+        </div>
+        <div class="card-description">
+          <h2><%= lesson.description %></h2>
+        </div>
       </div>
+      <% end %>
+    </div>
     <% end %>
   </div>
 </div>
