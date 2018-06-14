@@ -25,19 +25,29 @@
           </div>
         <% end %>
         <div>
-          <% lesson.bookings.each do |booking| %>
-        <% if booking.status == "Pending" %>
-            <%= form_for booking, :method => :put do |f| %>
-            <%= f.hidden_field :status, :value => "accepted" %>
-            <%= f.submit "Approve" %>
-          <% end %>
-          <%= form_for booking, :method => :put do |f| %>
-            <%= f.hidden_field :status, :value => "declined" %>
-            <%= f.submit "Decline" %>
-          <% end %>
-        <% end %>
-        <% end %>
-        </div>
+          <div class="user-approval">
+            <% lesson.bookings.each do |booking| %>
+              <% if booking.status == "Pending" %>
+                <%= form_for booking, :method => :put do |f| %>
+                <%= f.hidden_field :status, :value => "accepted" %>
+                 <div class="btn btn-primary btn-guru">
+                  <%= button_tag :submit do %>
+                  Decline
+                 <% end %>
+                 </div>
+                <% end %>
+                <%= form_for booking, :method => :put do |f| %>
+                <%= f.hidden_field :status, :value => "declined" %>
+                <div class="btn btn-primary btn-guru">
+                  <%= button_tag :submit do %>
+                  Decline
+                 <% end %>
+                 </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+      </div>
       </div>
     <% end %>
   </div>
