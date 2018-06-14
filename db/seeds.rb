@@ -15,7 +15,7 @@ puts 'Creating 3 fake USERS...'
     first_name: Faker::Artist.name,
     last_name:  Faker::Name.last_name,
     email:      Faker::Internet.email,
-    password:   'Faker::Internet.password',
+    password:   Faker::Internet.password,
     image:      'https://mickgrom.github.io/profile/images/profilepicmick.jpg'
   )
   user.save!
