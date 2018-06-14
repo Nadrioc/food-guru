@@ -37,7 +37,7 @@ images = [
 ]
 
 puts 'Creating 1. fake LESSONS...'
-1.times do
+10.times do
   lesson = Lesson.new(
     cuisine:    Faker::Address.country,
     location:   Faker::Address.city,
