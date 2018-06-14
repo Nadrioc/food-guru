@@ -12,14 +12,18 @@
 
 .banner-content {
     padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+
 }
 
 .banner h1 {
     font-size: 80px;
     font-weight: normal;
-    text-shadow: 0px 1.9px rgba(66, 64, 64, 0.9);
+    text-shadow: 0px 1.1px rgba(66, 64, 64, 0.9);
     font-family: 'clarendon-regular';
     color: #131515;
+    letter-spacing: 3px;
+
 }
 
 .banner p {
@@ -29,6 +33,7 @@
     opacity: 0.7;
     margin-bottom: 30px;
     color: #131515;
+    text-shadow: 1px 1px rgba(195, 188, 188, 0.9);
 }
 
 .btn-guru {
