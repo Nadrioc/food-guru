@@ -34,41 +34,22 @@
     </div>
 
     <h3>My Lessons</h3>
-    <ul>
-      <% @listed_lessons.each do |lesson| %>
-      <li><%= lesson.title %></li>
-      <%= link_to lesson_path(lesson), method: :delete, data: { confirm: "Are you sure?" } do %>
-        DELETE
-      <% end %>
-      <li><% lesson.bookings.each do |booking| %>
-          <% if booking.status == "Pending" %>
-            <%= form_for booking, :method => :put do |f| %>
-              <%= f.hidden_field :status, :value => "accepted" %>
-              <%= f.submit "Approve" %>
-            <% end %>
-            <%= form_for booking, :method => :put do |f| %>
-              <%= f.hidden_field :status, :value => "declined" %>
-              <%= f.submit "Decline" %>
-            <% end %>
-          <% else %>
-            <%= booking.status %>
-          <% end %>
-        <% end %>
-      </li>
-      <% end %>
-    </ul>
+
+    <div class="container">
+      <div class="row">
+        <%= render 'shared/card-mylessons' %>
+      </div>
+    </div>
+
+
 
     <h3>Lessons I signed up for</h3>
-    <ul>
-      <% @bookings.each do |booking| %>
 
-      <li><%= booking.lesson.title %></li>
-      <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } do %>
-      DELETE
-      <% end %>
-      <%= booking.status  %>
-      <% end %>
-    </ul>
+    <div class="container">
+      <div class="row">
+        <%= render 'shared/card-booking' %>
+      </div>
+    </div>
 
     <%= link_to "Go Back", lessons_path %>
   </div>
