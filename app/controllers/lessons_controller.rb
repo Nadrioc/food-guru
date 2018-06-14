@@ -1,9 +1,20 @@
 class LessonsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  def index
-    @lessons = Lesson.where.not(latitude: nil, longitude: nil)
 
-    @markers = @lessons.map do |lesson|
+  def index
+    if params[:query].present?
+      sql_query = " \
+        lessons.title ILIKE :query \
+        OR lessons.description ILIKE :query \
+        OR lessons.cuisine ILIKE :query \
+        OR lessons.location ILIKE :query \
+      "
+      @lessons = Lesson.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @lessons = Lesson.all
+    end
+
+    @markers = @lessons.where.not(latitude: nil, longitude: nil).map do |lesson|
       {
         lat: lesson.latitude,
         lng: lesson.longitude#,
