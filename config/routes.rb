@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:show, :destroy, :edit, :update]
   resources :users, only: [:show]
+  # do
+  #   member do
+  #     get 'all_lessons', to: "users#all_lessons"
+  #   end
+  # end
 
   get '/dashboard', to: "dashboard#show"
 end

@@ -1,21 +1,36 @@
+<div class="dashboard-user">
+  <img class="image-dashboard" src="https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.louthcraftmark.com%2Fwp-content%2Fuploads%2F2015%2F07%2Fphoto-girl.png&f=1" alt="Profile Image">
+</div>
+
+<div class="headings-dashboard">
+  <h2 class="section-heading">
+    <span>Welcome <%= @user.first_name %></span>
+  </h2>
+</div>
+
 <div class="wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="page-header align-top">
-              <h2>
-                My Dashboard
-              </h2>
-              <p>Your info<%= link_to "(edit)", edit_user_registration_path %></p>
-              <p class="text-left">Email: <%= @user.email %></p>
-            </div>
-          </div>
-          <div class="text-center col-md-4">
-            <div class="page-header align-top">
-              <img class="show-image-page" src="<%= @user.image %>" alt="Profile Image">
-
+      <div class="col-md-12 dashboard">
+        <p>This is your personal dashboard where you can view all your cooking classes created and booked!</p>
+        <p>We are happy to have you part of the FoodGuru family!</p>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="user-account-details">
+                <div class="user-basic">
+                  <p><span class="dash-label">First name :</span> <%= @user.first_name %></p>
+                  <p><span class="dash-label">Last Name :</span> <%= @user.last_name %></p>
+                  <p><span class="dash-label">Email :</span> <%= @user.email %></p>
+                  <p><span class="dash-label">Profile description :</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat laudantium dolorem reprehenderit aspernatur quidem deleniti harum repellat veritatis tenetur, modi tempore laborum odit error voluptate nesciunt. Ex beatae repellat iusto.</p>
+                </div>
+                <div class="user-edit">
+                  <p>
+                    <%= link_to edit_user_registration_path do %>
+                    <i class="far fa-edit"></i>
+                    <% end %>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -24,33 +39,35 @@
   </div>
 </div>
 
-<div class="wrapper">
-  <div class="container">
-    <div class="container">
-      <div class="row">
-        <h4>About your host</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, commodi adipisci cupiditate atque. Autem rem adipisci nesciunt hic assumenda saepe illo libero voluptate accusamus repellat, iure nostrum quos velit reiciendis.</p>
-      </div>
-    </div>
 
-    <h3>My Lessons</h3>
+<div class="headings-dashboard">
+  <h2 class="section-heading">
+    <span>You're hosting</span>
+  </h2>
+</div>
 
-    <div class="container">
+
+<div class="container">
       <div class="row">
         <%= render 'shared/card-mylessons' %>
       </div>
-    </div>
+</div>
 
 
+<div class="headings-dashboard">
+  <h2 class="section-heading">
+    <span>You're attending</span>
+  </h2>
+</div>
 
-    <h3>Lessons I signed up for</h3>
 
-    <div class="container">
-      <div class="row">
+<div class="container">
+    <div class="row">
         <%= render 'shared/card-booking' %>
-      </div>
     </div>
+</div>
 
     <%= link_to "Go Back", lessons_path %>
   </div>
 </div>
+
