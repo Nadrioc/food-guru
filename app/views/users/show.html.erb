@@ -1,55 +1,33 @@
-<div class="wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="page-header align-top">
-              <h2>
-                <%= @user.first_name %> <%= @user.last_name %>'s Profile Page
-              </h2>
-              <p class="text-left">Email: <%= @user.email %></p>
-            </div>
-          </div>
-          <div class="text-center col-md-4">
-            <div class="page-header align-top">
-              <img class="show-image-page" src="<%= @user.image %>" alt="Profile Image">
+<div class="wrapper profile">
+  <div class="container boxed">
+      <div class="row">
+        <div class="profile-user-banner">
+          <img class="image-profile" src="https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.louthcraftmark.com%2Fwp-content%2Fuploads%2F2015%2F07%2Fphoto-girl.png&f=1" alt="Profile Image">
 
-            </div>
+          <div class="headings-profile">
+            <h2 class="section-heading">
+              <span><%= @user.first_name %> <%= @user.last_name %></span>
+            </h2>
           </div>
         </div>
-      </div>
+
+        <!-- <div class="headings-dashboard">
+          <h2 class="section-heading">
+            <span><%= @user.first_name %> <%= @user.last_name %></span>
+          </h2>
+        </div> -->
+
+        <div class="profile-user-intro">
+          <h4>A BIT ABOUT YOUR HOST</h4>
+            <p>I have been a chef for 10 years and enjoy teaching others to cook. Is one of the most humble and respectable chefs in the industry today despite winning multiple awards, including the top 5 HAPA Best Executive Chef in Singapore. His strong leadership, leveraging on the importance of teamwork, allows him to head his team for competition, bagging gold and silver medals.</p>
+
+
+          <h4>JOIN <%= @user.first_name %>'S NEXT COOKING CLASS</h4>
+
+          <%= render 'shared/card-profile-lessons' %>
+          <%= link_to "Go Back", lessons_path %>
+        </div>
     </div>
   </div>
 </div>
 
-<div class="wrapper">
-  <div class="container">
-    <div class="container">
-      <div class="row">
-        <h4>About your host</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, commodi adipisci cupiditate atque. Autem rem adipisci nesciunt hic assumenda saepe illo libero voluptate accusamus repellat, iure nostrum quos velit reiciendis.</p>
-      </div>
-    </div>
-
-    <h3><%= @user.first_name %>'s Lessons</h3>
-
-    <div class="container">
-      <div class="row">
-        <%= render 'shared/card-profile-lessons' %>
-      </div>
-    </div>
-
-
-
-    <h3>Lessons <%= @user.first_name %> signed up for</h3>
-
-    <div class="container">
-      <div class="row">
-        <%= render 'shared/card-profile-bookings' %>
-      </div>
-    </div>
-
-    <%= link_to "Go Back", lessons_path %>
-  </div>
-</div>

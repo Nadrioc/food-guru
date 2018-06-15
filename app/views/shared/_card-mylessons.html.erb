@@ -6,11 +6,6 @@
       <div class="card-whole">
         <div class="card-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
         url('<%= cl_image_path lesson.image, height: 300, width: 400, crop: :fill %>')">
-        <% if lesson.user.image? %>
-        <%= image_tag(lesson.user.image, class: "card-user") %>
-        <% else %>
-        <%= image_tag "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.louthcraftmark.com%2Fwp-content%2Fuploads%2F2015%2F07%2Fphoto-girl.png&f=1", class: "card-user" %>
-        <% end %>
         <% lesson.bookings.each do |booking| %>
         <div class="card-status">
           <% if booking.status == "Pending" %>

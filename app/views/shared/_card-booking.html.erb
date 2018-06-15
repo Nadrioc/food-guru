@@ -1,25 +1,29 @@
 <div class="container">
   <div class="row">
+<!-- Find all bookings -->
     <% @bookings.each do |booking| %>
-    <div class="col-xs-12 col-sm-4 col-md-4">
-      <%= link_to lesson_path(booking.lesson) do %>
-      <div class="card-whole">
-        <div class="card-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+      <div class="col-xs-12 col-sm-4 col-md-4">
+        <%= link_to lesson_path(booking.lesson) do %>
+          <div class="card-whole">
+            <div class="card-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
         url('<%= cl_image_path booking.lesson.image, height: 300, width: 400, crop: :fill %>')">
-        <% if booking.lesson.user.image? %>
-        <%= image_tag(booking.lesson.user.image, class: "card-user") %>
-        <% else %>
-        <%= image_tag "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.louthcraftmark.com%2Fwp-content%2Fuploads%2F2015%2F07%2Fphoto-girl.png&f=1", class: "card-user" %>
-        <% end %>
-        <div class="card-status">
+ <!--  display user image -->
+              <% if booking.lesson.user.image? %>
+              <%= image_tag(booking.lesson.user.image, class: "card-user") %>
+              <% else %>
+              <%= image_tag "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.louthcraftmark.com%2Fwp-content%2Fuploads%2F2015%2F07%2Fphoto-girl.png&f=1", class: "card-user" %>
+              <% end %>
+<!-- Card status -->
+      <div class="card-status">
           <% if booking.status == "Pending" %>
-            <p><%= booking.status  %></p>
+           <p>Booking unconfirmed</p>
           <% elsif booking.status == "Accepted" %>
-            <p class="green-status"><%= booking.status  %></p>
+           <p class="green-status"><%= booking.status  %></p>
           <% elsif booking.status == "Declined" %>
-            <p class="red-status"><%= booking.status  %></p>
+           <p class="red-status"><%= booking.status  %></p>
           <% end %>
-        </div>
+      </div>
+
         <div class="card-title">
           <h2><%= booking.lesson.title %></h2>
         </div>
@@ -27,7 +31,8 @@
           <h3><i class="fas fa-map-marker"></i><%= booking.lesson.location %></h3>
         </div>
       </div>
-      <div class="card-bottom">
+
+<div class="card-bottom">
         <div class="card-category">
           <p><%= booking.lesson.cuisine %></p>
         </div>
@@ -35,28 +40,17 @@
           <p><%= booking.lesson.description %></p>
         </div>
         <div class="card-label-container">
-           <div class="card-choice-container">
-              <% if booking.status == "Pending" %>
-                <%= form_for booking, :method => :put do |f| %>
-                  <%= f.hidden_field :status, :value => "Accepted" %>
-                  <%= f.submit "Approve", class:"btn btn-success" %>
-                <% end %>
-                <%= form_for booking, :method => :put do |f| %>
-                  <%= f.hidden_field :status, :value => "Declined" %>
-                  <%= f.submit "Decline", class:"btn btn-danger" %>
-                <% end %>
-              <% end %>
-          </div>
+
           <div class="card-booking-delete">
             <%= link_to booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" do %>
-                Cancel Booking
+            Cancel Booking
             <% end %>
           </div>
+        </div>
       </div>
     </div>
+    <% end %>
   </div>
   <% end %>
-</div>
-<% end %>
 </div>
 </div>
