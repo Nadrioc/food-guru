@@ -55,14 +55,18 @@ h2.section-heading {
 .benefits .bf {
   margin-bottom: 0px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   top: -30px;
   flex-direction: column;
 
 }
 
-.benefits .bf .card-title h2 {
+.card.bf {
+  height: 170px !important;
+}
+
+.benefits .bf .card-title-benefits h2 {
   text-align: center;
   color: #FFB30F;
   margin: 0px;
@@ -71,12 +75,12 @@ h2.section-heading {
   text-transform: uppercase;
 }
 
-.benefits .bf .card-description p {
+.benefits .bf .card-description-benefits p {
   text-align: center;
   color: #545454;
   text-shadow: 0 1px 3px rgb(255, 255, 255);
 }
 
-.benefits .bf .card-description a p {
+.benefits .bf .card-description-benefits a p {
   color: #FFB30F;
 }
