@@ -26,7 +26,7 @@ h2.section-heading {
 }
 
 .section-heading span {
-    background: #f4f4f4;
+    background: #ffffff;
     position: relative;
     padding-right: 10px;
     padding-left: 10px;
@@ -58,6 +58,8 @@ h2.section-heading {
   justify-content: center;
   align-items: center;
   top: -30px;
+  flex-direction: column;
+
 }
 
 .benefits .bf .card-title h2 {
