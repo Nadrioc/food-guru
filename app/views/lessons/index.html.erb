@@ -1,16 +1,20 @@
 <div class="container">
   <div class="row">
-    <h1>List of Lessons</h1>
-      <%= render 'shared/card' %>
+    <div class="headings-home">
+      <h1 class="section-heading">
+        <span id="large-text">List of Lessons</span>
+      </h1>
+    </div>
+    <%= render 'shared/card' %>
   </div>
 </div>
 
 
 <div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
+id="map"
+style="width: 100%;
+height: 600px;"
+data-markers="<%= @markers.to_json %>"
 ></div>
 
 

@@ -9,7 +9,7 @@
               <% if lesson.user.image? %>
                 <%= image_tag(lesson.user.image, class: "card-user") %>
               <% else %>
-                 <%= image_tag "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.louthcraftmark.com%2Fwp-content%2Fuploads%2F2015%2F07%2Fphoto-girl.png&f=1", class: "card-user" %>
+                 <%= image_tag "https://itechway.net/wp-content/uploads/2017/09/geek-boys-whatsapp-dp-1.jpg", class: "card-user" %>
               <% end %>
               <div class="card-title">
                 <h2><%= lesson.title %></h2>
@@ -33,7 +33,7 @@
                   <p><i class="fas fa-users"></i><%= lesson.capacity %></p>
                 </div>
                 <div class="card-submit">
-                  <form action="/lessons/<%=lesson.id%>/bookings/new">
+                  <form action="/lessons/<%=lesson.id%>">
                     <input type="submit" value="Book!" class="btn btn-primary">
                   </form>
                 </div>
