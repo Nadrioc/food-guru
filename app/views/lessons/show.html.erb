@@ -45,8 +45,6 @@
                  <%= link_to user_path(@lesson.user) do %>
                   <p style="padding-left:5px;"> <%= @lesson.user.first_name %> <%= @lesson.user.last_name %> </p>
                  <% end %>
-                 <%#= link_to @lesson.user.first_name, user_path(@lesson.user) %>
-                 <%#= link_to @lesson.user.last_name, user_path(@lesson.user) %>
                </div>
              </div>
            </div>
@@ -57,11 +55,13 @@
             </div>
           </div>
           <div class="col-md-12 div-bottom">
-            <div>
+            <div class="form-info-container">
               <h4>What we'll be cooking</h4>
               <p><%= @lesson.description %></p>
+              <%= render 'bookings/form', lesson: @lesson %>
             </div>
           </div>
+
           <div class="col-md-12 div-bottom-last">
             <div>
               <div
