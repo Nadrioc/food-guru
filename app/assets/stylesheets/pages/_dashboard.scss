@@ -110,3 +110,15 @@ span.dash-label {
     flex-direction: column;
     align-items: center;
 }
+.card-choices {
+    display: block;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.card-choices .btn-primary {
+    padding-right: 5px;
+    width: 116px;
+}
