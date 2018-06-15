@@ -1,8 +1,8 @@
 .banner {
     background-image: image-url('cooking_flatlay.jpg');
-    color: white;
+    color: $white;
     text-align: center;
-    height: 85vh;
+    height: 88vh;
     background-size: cover !important;
     display: flex;
     align-items: center;
@@ -24,24 +24,19 @@
     font-size: 80px;
     font-weight: normal;
     text-shadow: 0px 1.1px rgba(66, 64, 64, 0.9);
-    color: #131515;
+    color: $gray;
     letter-spacing: 3px;
 
 }
 
-// .banner double-arrow {
-//   display: flex;
-//   justify-content: center;
-
-// }
 
 .banner p {
     font-size: 36px;
     font-weight: normal;
-    color: white;
+    color: $white;
     opacity: 0.7;
     margin-bottom: 30px;
-    color: #131515;
+    color: $black;
     text-shadow: 1px 1px rgba(195, 188, 188, 0.9);
 }
 
@@ -50,8 +45,8 @@
     border: 1px solid #efefef;
     transition: all 0.3s cubic-bezier(0.17, 0.67, 0.38, 0.91);
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
-    background-color: #FFB30F;
-    border-color: #FFB30F;
+    background-color: $yellow;
+    border-color: $yellow;
     font-size: 22px;
     padding: 5px 20px;
     margin-left: 20px;
