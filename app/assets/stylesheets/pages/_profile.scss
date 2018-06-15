@@ -4,13 +4,11 @@
   align-items: center;
   justify-content: center;
 }
-
 .boxed {
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     margin-bottom: 30px;
 }
-
 .profile-user-banner {
   // background: linear-gradient(#7e7d6e, #9CB0AE);
   display: flex;
@@ -28,12 +26,9 @@
   height:200px;
   width:200px;
 }
-
-
 .profile-user-intro {
     padding: 30px;
 }
-
 .headings-profile {
     position: relative;
     width: 100%;
@@ -44,12 +39,10 @@
     align-items: center;
     justify-content: space-around;
 }
-
 .headings-profile .section-heading {
     color: #FFB30F;
     padding-bottom: 15px;
 }
-
 .headings-profile .section-heading span {
     color: #ffffff;
     font-size: 25px;
@@ -57,11 +50,9 @@
     color: #ffffff;
     border-radius: 2px;
 }
-
 .headings-profile .section-heading:before {
     border-bottom: 1px solid #ffffff;
   }
-
 .profile-user {
   background: white;
   display: flex;
@@ -72,19 +63,16 @@
   margin-right: auto;
   max-width: 1600px;
 }
-
 .image-profile {
     max-width: 150px;
     max-height: 150px;
     border-radius: 50%;
     border: 1px solid #ffffff;
 }
-
 .profile-user-intro {
   display: flex;
   flex-direction: column;
 }
-
 .profile-user-intro h4 {
   text-transform: uppercase;
 }
@@ -95,7 +83,6 @@
   overflow: hidden;
   color: black;
 }
-
 .card-profile-top {
     height: 200px;
     /* text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); */
@@ -106,7 +93,6 @@
     margin-bottom: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
-
 .card-profile-bottom {
     background: white;
     height: 170px;
@@ -116,7 +102,6 @@
     flex-direction: column;
     align-items: center;
 }
-
 .card-price-profile {
     color: #FFB30F;
     opacity: 0.9;
@@ -124,4 +109,3 @@
     padding-left: 2%;
     font-size: 24px;
 }
-

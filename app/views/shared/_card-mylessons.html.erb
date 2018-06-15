@@ -7,7 +7,7 @@
         <div class="card-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
         url('<%= cl_image_path lesson.image, height: 300, width: 400, crop: :fill %>')">
         <% lesson.bookings.each do |booking| %>
-        <div class="card-status">
+        <div class="card-status-dashboard">
           <% if booking.status == "Pending" %>
             <p><%= booking.status  %></p>
           <% elsif booking.status == "Accepted" %>
@@ -17,23 +17,24 @@
           <% end %>
         </div>
         <% end %>
-        <div class="card-title">
+        <div class="card-title dashboard-title">
           <h2><%= lesson.title %></h2>
         </div>
-        <h3>
-          <%= link_to "Edit", edit_lesson_path(lesson), :class => "btn btn-primary align-top" %>
-        </h3>
+        <div class="edit-lesson-dashboard">
+          <%= link_to "Edit", edit_lesson_path(lesson), :class => "dashboard-edit" %>
+        </div>
         <div class="card-location">
           <h3><i class="fas fa-map-marker"></i><%= lesson.location %></h3>
         </div>
       </div>
-      <div class="card-bottom">
+      <div class="card-dashboard-bottom">
         <div class="card-category">
           <p><%= lesson.cuisine %></p>
         </div>
         <div class="card-description ">
-          <p><%= lesson.description %></p>
+          <p><%=truncate( lesson.description , :length => 80)%></p>
         </div>
+
         <div class="card-label-container">
            <div class="card-choice-container">
             <% lesson.bookings.each do |booking| %>
@@ -48,12 +49,13 @@
                 <% end %>
               <% end %>
             <% end %>
-          </div>
-          <div class="card-booking-delete">
+            <div class="card-booking-delete">
             <%= link_to lesson_path(lesson), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" do %>
             DELETE
             <% end %>
           </div>
+          </div>
+
       </div>
     </div>
   </div>
@@ -62,7 +64,6 @@
 <% end %>
 </div>
 </div>
-
 
 
 

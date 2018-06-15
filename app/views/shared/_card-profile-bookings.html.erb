@@ -23,7 +23,7 @@
                 <p><%= booking.lesson.cuisine %></p>
               </div>
               <div class="card-description ">
-                <p><%= booking.lesson.description %></p>
+                <p><%=truncate( booking.lesson.description , :length => 80)%></p>
               </div>
               <div class="card-label-container">
                 <div class="card-price">
