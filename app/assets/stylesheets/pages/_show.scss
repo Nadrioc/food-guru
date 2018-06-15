@@ -16,17 +16,31 @@
   // position: sticky !important;
   // top: 0 !important;
   border-color: black;
-  border-width: 4px;
+  border-width: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
-
 }
+
+#show-lesson-image {
+  flex: 300 300 450px;
+  height: 600px;
+  width: 400px;
+  padding-top: 35px;
+  position: sticky !important;
+  top: 40px !important;
+}
+
 .content {
   display: flex;
 }
 
 .div-bottom {
   border-bottom: 1px solid #DBDBDB !important;
+  padding-top: 12px;
+  padding-bottom: 10px;
+}
+
+.div-bottom-last {
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -38,4 +52,9 @@
 
 .info-container {
   margin-right: 25px;
+}
+
+.host-link-inline {
+  display: flex;
+  justify-content: center;
 }
