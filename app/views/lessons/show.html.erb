@@ -23,7 +23,7 @@
                 <p>Booking Dates</p>
                 <div>
                   <% if @lesson.starts_at.present?%>
-                  <p><%= @lesson.starts_at.strftime("%m/ %d/ %y at %I:%M%p") %> <%= link_to "Book!", new_lesson_booking_path(@lesson), :class => "btn btn-primary" %></p>
+                  <p><%= @lesson.starts_at.strftime("%m/ %d/ %y at %I:%M%p") %> </p>
                   <% else %>
                     <p>No classes scheduled, check back soon!</p>
                   <% end %>
