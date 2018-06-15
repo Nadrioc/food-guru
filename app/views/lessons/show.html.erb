@@ -1,23 +1,20 @@
- <br>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-1 col-md-10">
-
-        <div class="content">
-          <div class="info-container">
-            <div class="row">
-              <div class="col-md-12 div-bottom">
-                <div>
-                  <p>Information about the lesson:</p>
-                  <% if @lesson.starts_at.present?%>
-                  <p><%= @lesson.starts_at.strftime("%m/ %d/ %y at %I:%M%p") %></p>
-                  <% end %>
-                  <div class="lesson-icons">
-                    <p><i class="fas fa-utensils"></i>  <%= @lesson.cuisine %></p>
-                    <p><i class="fas fa-map-marker"></i>  <%= @lesson.location %></p>
-                    <p><i class="fas fa-user"></i>  <%= @lesson.capacity %></p>
-                    <p><i class="fas fa-euro-sign"></i>  <%= @lesson.price %> </p>
-                  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <div class="content">
+        <div class="info-container">
+          <div class="row">
+            <div class="col-md-12 div-bottom">
+              <div>
+                <h3>
+                  <%= @lesson.title %>
+                </h3>
+                <p>Information about the lesson</p>
+                <div class="lesson-icons">
+                  <p><i class="fas fa-utensils"></i>  <%= @lesson.cuisine %></p>
+                  <p><i class="fas fa-map-marker"></i>  <%= @lesson.location %></p>
+                  <p><i class="fas fa-user"></i>  <%= @lesson.capacity %></p>
+                  <p><i class="fas fa-euro-sign"></i>  <%= @lesson.price %> </p>
                 </div>
               </div>
             </div >
@@ -27,6 +24,8 @@
                 <div>
                   <% if @lesson.starts_at.present?%>
                   <p><%= @lesson.starts_at.strftime("%m/ %d/ %y at %I:%M%p") %> <%= link_to "Book!", new_lesson_booking_path(@lesson), :class => "btn btn-primary" %></p>
+                  <% else %>
+                    <p>No classes schedules, check back soon!</p>
                   <% end %>
                 </div>
 
@@ -54,7 +53,7 @@
            <div class="col-md-12 div-bottom">
             <div>
               <h4>About your host</h4>
-              <p>Three years ago, I gave up my corporate career and started doing things I really like. This should have something to do with my love for people, cooking, history and Amsterdam, my native town. I will never forget the day I heard about being a food tour guide. It just ticked all the boxes! From that day I have welcomed hundreds of food friends from all over the world. Two years as manager for a large food tour operator and since March 2018 with my own company. Occasionally, some of my friends and best food tour guides run the tour. You can learn more abut them, like Rudolph, in the reviews.</p>
+              <p><%= @lesson.user.description %></p>
             </div>
           </div>
           <div class="col-md-12 div-bottom">
