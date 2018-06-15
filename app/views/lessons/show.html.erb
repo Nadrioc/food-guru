@@ -12,6 +12,8 @@
                     <%= @lesson.title %> <%= link_to "Edit", edit_lesson_path, :class => "btn btn-primary align-top" %>
                   </h3>
                   <p>Information about the lesson:</p>
+                  <p><%= @lesson.starts_at.strftime("%m/ %d/ %y at %I:%M%p") %></p>
+
                   <div class="lesson-icons">
                     <p><i class="fas fa-utensils"></i>  <%= @lesson.cuisine %></p>
                     <p><i class="fas fa-map-marker"></i>  <%= @lesson.location %></p>
