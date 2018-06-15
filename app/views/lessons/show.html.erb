@@ -1,32 +1,31 @@
- <br>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-offset-1 col-md-10">
-
-        <div class="content">
-          <div class="info-container">
-            <div class="row">
-              <div class="col-md-12 div-bottom">
-                <div>
-                  <p>Information about the lesson:</p>
-                  <% if @lesson.starts_at.present?%>
-                  <p><%= @lesson.starts_at.strftime("%m/ %d/ %y at %I:%M%p") %></p>
-                  <% end %>
-                  <div class="lesson-icons">
-                    <p><i class="fas fa-utensils"></i>  <%= @lesson.cuisine %></p>
-                    <p><i class="fas fa-map-marker"></i>  <%= @lesson.location %></p>
-                    <p><i class="fas fa-user"></i>  <%= @lesson.capacity %></p>
-                    <p><i class="fas fa-euro-sign"></i>  <%= @lesson.price %> </p>
-                  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10">
+      <div class="content">
+        <div class="info-container">
+          <div class="row">
+            <div class="col-md-12 div-bottom">
+              <div>
+                <h3>
+                  <%= @lesson.title %>
+                </h3>
+                <p>Information about the lesson</p>
+                <div class="lesson-icons">
+                  <p><i class="fas fa-utensils"></i>  <%= @lesson.cuisine %></p>
+                  <p><i class="fas fa-map-marker"></i>  <%= @lesson.location %></p>
+                  <p><i class="fas fa-user"></i>  <%= @lesson.capacity %></p>
+                  <p><i class="fas fa-euro-sign"></i>  <%= @lesson.price %> </p>
                 </div>
               </div>
-            </div>
+            </div >
             <div class="col-md-12 div-bottom">
               <div>
                 <p>Booking Dates</p>
                 <div>
                   <% if @lesson.starts_at.present?%>
                   <p><%= @lesson.starts_at.strftime("%m/ %d/ %y at %I:%M%p") %> <%= link_to "Book!", new_lesson_booking_path(@lesson), :class => "btn btn-primary" %></p>
+                  <% else %>
+                    <p>No classes scheduled, check back soon!</p>
                   <% end %>
                 </div>
 
@@ -38,7 +37,7 @@
                   <% if @lesson.user.image? %>
                     <%= image_tag(@lesson.user.image, class: "img-rounded-host") %>
                   <% else %>
-                    <%= image_tag "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.louthcraftmark.com%2Fwp-content%2Fuploads%2F2015%2F07%2Fphoto-girl.png&f=1", class: "img-rounded-host" %>
+                    <%= image_tag "https://itechway.net/wp-content/uploads/2017/09/geek-boys-whatsapp-dp-1.jpg", class: "img-rounded-host" %>
                   <% end %>
                 </div>
                 <div  class="text-center host-link-inline">
@@ -46,23 +45,23 @@
                  <%= link_to user_path(@lesson.user) do %>
                   <p style="padding-left:5px;"> <%= @lesson.user.first_name %> <%= @lesson.user.last_name %> </p>
                  <% end %>
-                 <%#= link_to @lesson.user.first_name, user_path(@lesson.user) %>
-                 <%#= link_to @lesson.user.last_name, user_path(@lesson.user) %>
                </div>
              </div>
            </div>
            <div class="col-md-12 div-bottom">
             <div>
               <h4>About your host</h4>
-              <p>Three years ago, I gave up my corporate career and started doing things I really like. This should have something to do with my love for people, cooking, history and Amsterdam, my native town. I will never forget the day I heard about being a food tour guide. It just ticked all the boxes! From that day I have welcomed hundreds of food friends from all over the world. Two years as manager for a large food tour operator and since March 2018 with my own company. Occasionally, some of my friends and best food tour guides run the tour. You can learn more abut them, like Rudolph, in the reviews.</p>
+              <p><%= @lesson.user.description %></p>
             </div>
           </div>
           <div class="col-md-12 div-bottom">
             <div>
               <h4>What we'll be cooking</h4>
-              <p><%= @lesson.description %></p>
+              <p class="padding-bottom"><%= @lesson.description %></p>
+              <%= render 'bookings/form', lesson: @lesson %>
             </div>
           </div>
+
           <div class="col-md-12 div-bottom-last">
             <div>
               <div
