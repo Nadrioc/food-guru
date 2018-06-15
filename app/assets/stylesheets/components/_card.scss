@@ -64,6 +64,7 @@
   position: absolute;
   left: 10px;
   bottom: 19px;
+  color: $white;
 }
 
 .card-title h2 {
@@ -150,7 +151,9 @@
 .card-status {
   position: absolute;
   left: 10px;
-  top: 10px
+  top: 10px;
+  text-transform: none ;
+  color: $white;
 }
 
 .green-status {
@@ -165,4 +168,10 @@
   display: flex;
   padding-bottom: 15px;
   padding-left: 10px;
+}
+
+.edit-button {
+  position: absolute;
+  right: 10px;
+  top: 10px
 }
