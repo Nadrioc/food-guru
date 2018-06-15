@@ -8,6 +8,7 @@
 .boxed {
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
 }
 
 .profile-user-banner {
@@ -18,9 +19,9 @@
   align-items: center;
   padding: 30px;
   background-image: image-url('cooking_flatlay.jpg');
-    color: white;
-    height: 45vh;
-    background-size: cover !important;
+  color: white;
+  height: 45vh;
+  background-size: cover !important;
 }
 
 
@@ -49,6 +50,7 @@
     font-size: 25px;
     background: #94a29d;
     color: #ffffff;
+    border-radius: 2px;
 }
 
 .headings-profile .section-heading:before {
@@ -80,5 +82,41 @@
 
 .profile-user-intro h4 {
   text-transform: uppercase;
+}
+.profile-user-intro p {
+  font-size: 18px;
+  opacity: .5;
+  font-weight: lighter;
+  overflow: hidden;
+  color: black;
+}
+
+.card-profile-top {
+    height: 200px;
+    /* text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); */
+    background-size: cover !important;
+    background-position: center;
+    color: white;
+    position: relative;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.card-profile-bottom {
+    background: white;
+    height: 170px;
+    color: black;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-price-profile {
+    color: #FFB30F;
+    opacity: 0.9;
+    padding-top: 10px;
+    padding-left: 2%;
+    font-size: 24px;
 }
 
