@@ -71,6 +71,6 @@ class LessonsController < ApplicationController
   private
 
   def lesson_params
-    params.require(:lesson).permit(:cuisine, :location, :title, :description, :image, :body, :capacity, :price)
+    params.require(:lesson).permit(:cuisine, :location, :title, :description, :image, :body, :capacity, :price, :starts_at)
   end
 end

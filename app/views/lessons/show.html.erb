@@ -8,10 +8,10 @@
             <div class="row">
               <div class="col-md-12 div-bottom">
                 <div>
-                  <h3>
-                    <%= @lesson.title %> <%= link_to "Edit", edit_lesson_path, :class => "btn btn-primary align-top" %>
-                  </h3>
                   <p>Information about the lesson:</p>
+                  <% if @lesson.starts_at.present?%>
+                  <p><%= @lesson.starts_at.strftime("%m/ %d/ %y at %I:%M%p") %></p>
+                  <% end %>
                   <div class="lesson-icons">
                     <p><i class="fas fa-utensils"></i>  <%= @lesson.cuisine %></p>
                     <p><i class="fas fa-map-marker"></i>  <%= @lesson.location %></p>
@@ -20,41 +20,74 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-12 div-bottom ">
+            </div>
+            <div class="col-md-12 div-bottom">
+              <div>
+                <p>Booking Dates</p>
                 <div>
-                  Berlin Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit placeat aspernatur, ut repellendus quia magnam qui sunt, error! Quia atque, ea maiores! Deserunt assumenda, eaque at cupiditate minima error debitis.
+                  <% if @lesson.starts_at.present?%>
+                  <p><%= @lesson.starts_at.strftime("%m/ %d/ %y at %I:%M%p") %> <%= link_to "Book!", new_lesson_booking_path(@lesson), :class => "btn btn-primary" %></p>
+                  <% end %>
                 </div>
+
               </div>
-              <div class="col-md-12 div-bottom">
-                <div>
-                  Shanghai Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem consectetur excepturi sit nihil, numquam fugit incidunt. Dignissimos deleniti accusamus doloremque incidunt, rem aliquid. At, unde aliquid optio cupiditate vitae ipsa.
+            </div>
+            <div class="col-md-12 div-bottom ">
+              <div>
+                <div class="text-center">
+                  <% if @lesson.user.image? %>
+                    <%= image_tag(@lesson.user.image, class: "img-rounded-host") %>
+                  <% else %>
+                    <%= image_tag "https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.louthcraftmark.com%2Fwp-content%2Fuploads%2F2015%2F07%2Fphoto-girl.png&f=1", class: "img-rounded-host" %>
+                  <% end %>
                 </div>
-              </div>
-              <div class="col-md-12 div-bottom  ">
-                <div>
-                  Barcelona Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates veniam voluptatem quasi dignissimos deserunt nesciunt temporibus, voluptate perferendis velit nisi sint debitis excepturi molestiae doloremque! Accusantium id laudantium neque minima.
-                </div>
-              </div>
-
-
-
+                <div  class="text-center host-link-inline">
+                 Hosted By:
+                 <%= link_to user_path(@lesson.user) do %>
+                  <p style="padding-left:5px;"> <%= @lesson.user.first_name %> <%= @lesson.user.last_name %> </p>
+                 <% end %>
+                 <%#= link_to @lesson.user.first_name, user_path(@lesson.user) %>
+                 <%#= link_to @lesson.user.last_name, user_path(@lesson.user) %>
+               </div>
+             </div>
+           </div>
+           <div class="col-md-12 div-bottom">
+            <div>
+              <h4>About your host</h4>
+              <p>Three years ago, I gave up my corporate career and started doing things I really like. This should have something to do with my love for people, cooking, history and Amsterdam, my native town. I will never forget the day I heard about being a food tour guide. It just ticked all the boxes! From that day I have welcomed hundreds of food friends from all over the world. Two years as manager for a large food tour operator and since March 2018 with my own company. Occasionally, some of my friends and best food tour guides run the tour. You can learn more abut them, like Rudolph, in the reviews.</p>
             </div>
           </div>
-          <br>
-
-
-
-        <div
-          id="map"
-          style="width: 100%;
-          height: 400px;"
-          data-markers="<%= @markers.to_json %>"
-          >
+          <div class="col-md-12 div-bottom">
+            <div>
+              <h4>What we'll be cooking</h4>
+              <p><%= @lesson.description %></p>
+            </div>
+          </div>
+          <div class="col-md-12 div-bottom-last">
+            <div>
+              <div
+              id="map"
+              style="width: 100%;
+              height: 400px;"
+              data-markers="<%= @markers.to_json %>"
+              >
+            </div>
+          </div>
         </div>
+
+
 
       </div>
     </div>
+    <br>
+
+    <div>
+      <img id="show-lesson-image" src="<%= @lesson.image %>" alt="Cooking lesson">
+    </div>
+
   </div>
+</div>
+</div>
 </div>
 
 
