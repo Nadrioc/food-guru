@@ -25,7 +25,7 @@
 
 
 .profile-user-intro {
-    padding: 20px;
+    padding: 30px;
 }
 
 .headings-profile {
@@ -76,5 +76,9 @@
 .profile-user-intro {
   display: flex;
   flex-direction: column;
+}
+
+.profile-user-intro h4 {
+  text-transform: uppercase;
 }
 

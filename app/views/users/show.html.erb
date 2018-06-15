@@ -18,13 +18,14 @@
         </div> -->
 
         <div class="profile-user-intro">
-          <h4>A BIT ABOUT YOUR HOST</h4>
+          <h4>BIOGRAPHY</h4>
             <p>I have been a chef for 10 years and enjoy teaching others to cook. Is one of the most humble and respectable chefs in the industry today despite winning multiple awards, including the top 5 HAPA Best Executive Chef in Singapore. His strong leadership, leveraging on the importance of teamwork, allows him to head his team for competition, bagging gold and silver medals.</p>
 
 
           <h4>JOIN <%= @user.first_name %>'S NEXT COOKING CLASS</h4>
-
-          <%= render 'shared/card-profile-lessons' %>
+          <div class="cards-user-profile">
+            <%= render 'shared/card-profile-lessons' %>
+          </div>
           <%= link_to "Go Back", lessons_path %>
         </div>
     </div>

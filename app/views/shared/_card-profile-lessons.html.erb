@@ -1,6 +1,4 @@
-<div class="container">
-  <div class="row">
-    <% @listed_lessons.each do |lesson| %>
+<% @listed_lessons.each do |lesson| %>
       <div class="col-xs-12 col-sm-4 col-md-4">
         <%= link_to lesson_path(lesson) do %>
           <div class="card-whole">
@@ -43,5 +41,3 @@
         <% end %>
       </div>
     <% end %>
-  </div>
-</div>
