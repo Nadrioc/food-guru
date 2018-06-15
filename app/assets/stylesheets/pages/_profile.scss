@@ -1,10 +1,76 @@
 .profile {
   padding-top:20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .boxed {
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    padding: 50px;
-    margin: 10px;
 }
+
+.profile-user-banner {
+  background: linear-gradient(#7e7d6e, #9CB0AE);
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  align-items: center;
+  padding: 30px;
+}
+
+
+.profile-user-intro {
+    padding: 20px;
+}
+
+.headings-profile {
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.headings-profile .section-heading {
+    color: #FFB30F;
+    padding-bottom: 15px;
+}
+
+.headings-profile .section-heading span {
+    color: #ffffff;
+    font-size: 25px;
+    background: #94a29d;
+    color: #ffffff;
+}
+
+.headings-profile .section-heading:before {
+    border-bottom: 1px solid #ffffff;
+  }
+
+.profile-user {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1600px;
+}
+
+.image-profile {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+}
+
+.profile-user-intro {
+  display: flex;
+  flex-direction: column;
+}
+
