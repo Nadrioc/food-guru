@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(user: @student, lesson: @lesson)
     @booking.status = "Pending"
     @booking.save
-    redirect_to lesson_path(@lesson)
+    redirect_to dashboard_path
   end
 
   def update

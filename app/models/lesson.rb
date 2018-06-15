@@ -7,4 +7,5 @@ class Lesson < ApplicationRecord
   validates :cuisine, presence: true
   validates :location, presence: true
   validates :title, presence: true
+  validates :image, presence: true
 end
