@@ -25,7 +25,7 @@
                   <% if @lesson.starts_at.present?%>
                   <p><%= @lesson.starts_at.strftime("%m/ %d/ %y at %I:%M%p") %> <%= link_to "Book!", new_lesson_booking_path(@lesson), :class => "btn btn-primary" %></p>
                   <% else %>
-                    <p>No classes schedules, check back soon!</p>
+                    <p>No classes scheduled, check back soon!</p>
                   <% end %>
                 </div>
 
@@ -55,9 +55,9 @@
             </div>
           </div>
           <div class="col-md-12 div-bottom">
-            <div class="form-info-container">
+            <div>
               <h4>What we'll be cooking</h4>
-              <p><%= @lesson.description %></p>
+              <p class="padding-bottom"><%= @lesson.description %></p>
               <%= render 'bookings/form', lesson: @lesson %>
             </div>
           </div>

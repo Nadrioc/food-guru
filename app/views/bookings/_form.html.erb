@@ -1,7 +1,7 @@
 
       <%= simple_form_for [@lesson, @booking] do |f| %>
-      <%= f.input :attending %>
-      <%= f.submit %>
+      <%= f.input :attending, label: 'How many students?' %>
+      <%= f.submit class: "btn btn-primary"%>
       <% end %>
 
 
