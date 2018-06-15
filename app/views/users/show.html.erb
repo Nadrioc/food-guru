@@ -2,15 +2,19 @@
   <div class="container boxed">
       <div class="row">
         <div class="profile-user-banner">
-          <% if current_user.image? %>
-          <%= image_tag(current_user.image, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" ) %>
-          <% else %>
-          <%= image_tag "https://itechway.net/wp-content/uploads/2017/09/geek-boys-whatsapp-dp-1.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <% end %>
-          <div class="headings-profile">
-            <h2 class="section-heading">
+
+          <div class="user-profile-image">
+            <% if current_user.image? %>
+            <%= image_tag(current_user.image) %>
+            <% else %>
+            <%= image_tag "https://itechway.net/wp-content/uploads/2017/09/geek-boys-whatsapp-dp-1.jpg" %>
+            <% end %>
+          </div>
+
+            <div class="headings-profile">
+              <h2 class="section-heading">
               <span><%= @user.first_name %> <%= @user.last_name %></span>
-            </h2>
+              </h2>
           </div>
         </div>
 
