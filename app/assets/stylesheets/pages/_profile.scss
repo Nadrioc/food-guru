@@ -11,12 +11,16 @@
 }
 
 .profile-user-banner {
-  background: linear-gradient(#7e7d6e, #9CB0AE);
+  // background: linear-gradient(#7e7d6e, #9CB0AE);
   display: flex;
   flex-direction: column;
-  height: 300px;
+  // height: 300px;
   align-items: center;
   padding: 30px;
+  background-image: image-url('cooking_flatlay.jpg');
+    color: white;
+    height: 45vh;
+    background-size: cover !important;
 }
 
 
