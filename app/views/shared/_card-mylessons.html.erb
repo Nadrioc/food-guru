@@ -20,6 +20,9 @@
         <div class="card-title">
           <h2><%= lesson.title %></h2>
         </div>
+        <h3>
+          <%= link_to "Edit", edit_lesson_path(lesson), :class => "btn btn-primary align-top" %>
+        </h3>
         <div class="card-location">
           <h3><i class="fas fa-map-marker"></i><%= lesson.location %></h3>
         </div>
